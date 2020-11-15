@@ -1,5 +1,5 @@
 from rest_framework import serializers
-import (
+from .models import (
     Product,
     Tag,
     ProductOption
@@ -20,7 +20,7 @@ class TagSerializer(serializers.ModelSerializer):
             'tag_set'
         )
 
-class ProductOption:
+class ProductOptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductOption
         fields = (
