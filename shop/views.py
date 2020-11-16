@@ -14,4 +14,10 @@ from .models import (
 
 @api_view(['GET'])
 def testAPI(request):
-    return Response({'message':'SUCCESS'})
+    products = Product.objects.all()
+    print(products)
+    serializer = ProductSerializer(products, many=True)
+    print(serializer)
+    print('#####')
+    print(serializer.data)
+    return Response({'data':serializer.data})
