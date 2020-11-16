@@ -9,15 +9,15 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model  = Product
         fields = (
-            'title',
+            'name',
+            'tag_set',
         )
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
         fields = (
-            'name',
-            'tag_set'
+            'name'
         )
 
 class ProductOptionSerializer(serializers.ModelSerializer):
