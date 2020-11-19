@@ -21,3 +21,9 @@ def testAPI(request):
     print('#####')
     print(serializer.data)
     return Response({'data':serializer.data})
+
+@api_view(['POST'])
+def create_product(request):
+    data = json.loads(request.body)
+    print(data)
+    return 0
