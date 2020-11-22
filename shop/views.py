@@ -14,11 +14,12 @@ from .models import (
 
 @api_view(['GET'])
 def testAPI(request):
+    print('##########')
     products = Product.objects.all()
-    print(products)
+    print(type(products))
     serializer = ProductSerializer(products, many=True)
-    print(serializer)
-    print('#####')
+    print(type(serializer))
+    print('##########')
     print(serializer.data)
     return Response({'data':serializer.data})
 
